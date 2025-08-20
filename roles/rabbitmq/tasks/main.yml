@@ -15,7 +15,7 @@
     state: restarted
 
 - name: Add User in RabbitMQ
-  ansible.builtin.shell: rabbitmqctl add_user roboshop roboshop123 
+  ansible.builtin.shell: rabbitmqctl add_user roboshop {{ secrets.RABBITMQ_USER_PASS }} 
 
 - name: Set Permission for User in RabbitMQ
   ansible.builtin.shell: rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*" 

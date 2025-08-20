@@ -1,1 +1,2 @@
 component: mysql
+secrets: "{{ lookup('harshi_vault', 'secret=project-{{env}}/data/mysql token={{vault_token}} url=https://vault.adevops.click:8200 validate_certs=false')}}"

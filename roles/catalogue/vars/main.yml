@@ -3,3 +3,5 @@ component: catalogue
 schema_setup: mongo
 schema_files:
   - master-data
+
+secrets: "{{ lookup('harshi_vault', 'secret=project-{{env}}/data/catalogue token={{vault_token}} url=https://vault.adevops.click:8200 validate_certs=false')}}"  
