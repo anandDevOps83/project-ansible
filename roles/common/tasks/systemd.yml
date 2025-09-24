@@ -1,4 +1,4 @@
-- name: Copy User Service File
+- name: Copy {{ component }} Service File
   ansible.builtin.template:
     src: "{{ component }}.service"
     dest: /etc/systemd/system/{{ component }}.service
