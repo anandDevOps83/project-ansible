@@ -1,3 +1,3 @@
 component: payment
 app_path: /app
-secrets: "{{ lookup('hashi_vault', 'secret=project-{{env}}/data/payment token={{vault_token}} url=https://vault.adevops.click:8200 validate_certs=false')}}"
+secrets: "{{ lookup('hashi_vault', 'secret=project-' + env + '/data/user token=' + vault_token + ' url=https://vault.adevops.click:8200 validate_certs=false') }}"
